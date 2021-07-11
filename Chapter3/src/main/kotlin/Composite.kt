@@ -1,7 +1,3 @@
-import bridge.good.RegularLegs
-import bridge.good.Rifle
-import bridge.good.StormTrooper
-
 class Squad(private val units: List<StormTrooper>) {
     fun move(x: Long, y: Long) {
         for (u in units) {

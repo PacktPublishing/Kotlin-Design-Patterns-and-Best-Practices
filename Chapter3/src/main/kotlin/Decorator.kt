@@ -1,35 +1,26 @@
 import java.lang.IllegalStateException
-import java.lang.RuntimeException
 
+fun main() {
+    val starTrekRepository = DefaultStarTrekRepository()
+    val withValidating = ValidatingAdd(starTrekRepository)
+    val withLoggingAndValidating = LoggingGetCaptain(withValidating)
 
+    withLoggingAndValidating["USS Enterprise"]
 
-/*open class StarTrekRepository {
-    private val starshipCaptains = mutableMapOf("USS Enterprise" to "Jean-Luc Picard")
-
-    open fun getCaptain(starshipName: String): String {
-        return starshipCaptains[starshipName] ?: "Unknown"
+    try {
+        // Throws an exception: Kathryn Janeway name is longer than 15 characters!
+        withLoggingAndValidating["USS Voyager"] = "Kathryn Janeway"
+    }
+    catch (e: IllegalStateException) {
+        println(e)
     }
 
-    open fun addCaptain(starshipName: String, captainName: String) {
-        starshipCaptains[starshipName] = captainName
-    }
+
+    println(withLoggingAndValidating is LoggingGetCaptain) // This is our top level decorator, no problem here
+    println(withLoggingAndValidating is StarTrekRepository) // This is the interface we implement, still no problem
+    //println(withLoggingAndValidating is ValidatingAdd) // We wrap this class, but compiler cannot validate it
+    //println(withLoggingAndValidating is DefaultStarTrekRepository) // We wrap this class, but compiler cannot validate it
 }
-
-class LoggingGetCaptainStarTrekRepository : StarTrekRepository() {
-    override fun getCaptain(starshipName: String): String {
-        println("Getting captain for $starshipName")
-        return super.getCaptain(starshipName)
-    }
-}
-
-class ValidatingAddCaptainStarTrekRepository : StarTrekRepository() {
-    override fun addCaptain(starshipName: String, captainName: String) {
-        if (captainName.length > 20) {
-            throw RuntimeException("$captainName is longer than 20 characters!")
-        }
-        super.addCaptain(starshipName, captainName)
-    }
-}*/
 
 interface StarTrekRepository {
     operator fun get(starshipName: String): String
@@ -66,24 +57,3 @@ class ValidatingAdd(private val repository: StarTrekRepository): StarTrekReposit
     }
 }
 
-fun main() {
-    val starTrekRepository = DefaultStarTrekRepository()
-    val withValidating = ValidatingAdd(starTrekRepository)
-    val withLoggingAndValidating = LoggingGetCaptain(withValidating)
-
-    withLoggingAndValidating["USS Enterprise"]
-
-    try {
-        // Throws an exception: Kathryn Janeway name is longer than 15 characters!
-        withLoggingAndValidating["USS Voyager"] = "Kathryn Janeway"
-    }
-    catch (e: IllegalStateException) {
-        println(e)
-    }
-
-
-    println(withLoggingAndValidating is LoggingGetCaptain) // This is our top level decorator, no problem here
-    println(withLoggingAndValidating is StarTrekRepository) // This is the interface we implement, still no problem
-    //println(withLoggingAndValidating is ValidatingAdd) // We wrap this class, but compiler cannot validate it
-    //println(withLoggingAndValidating is DefaultStarTrekRepository) // We wrap this class, but compiler cannot validate it
-}

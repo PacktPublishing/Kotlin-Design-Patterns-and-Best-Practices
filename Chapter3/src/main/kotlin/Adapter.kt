@@ -1,7 +1,6 @@
 import java.util.stream.Stream
 import kotlin.streams.toList
 
-
 fun main() {
 
     /*cellPhone(
@@ -25,9 +24,13 @@ fun main() {
 
     val s = (Stream.generate { 42 }).toList()
     println(s)
-/*
+
+    // Using an adapter in a wrong way may cause your program to never stop!
+    // For example:
+    /*
     println("Collecting elements")
-    collectionProcessing(s.toList())*/
+    collectionProcessing(s.toList())
+    */
 }
 
 fun <T> collectionProcessing(c: Collection<T>) {

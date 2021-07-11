@@ -1,4 +1,10 @@
-package bridge.good
+fun main() {
+    val stormTrooper = StormTrooper(Rifle(), RegularLegs())
+    val flameTrooper = StormTrooper(Flamethrower(), RegularLegs())
+    val scoutTrooper = StormTrooper(Rifle(), AthleticLegs())
+
+    println(listOf(stormTrooper, flameTrooper, scoutTrooper))
+}
 
 interface Trooper {
     fun move(x: Long, y: Long)
@@ -54,8 +60,3 @@ class AthleticLegs : Legs {
     override fun move(x: Long, y: Long) = REGULAR_SPEED * 2
 }
 
-fun main() {
-    val stormTrooper = StormTrooper(Rifle(), RegularLegs())
-    val flameTrooper = StormTrooper(Flamethrower(), RegularLegs())
-    val scoutTrooper = StormTrooper(Rifle(), AthleticLegs())
-}
