@@ -14,6 +14,10 @@ class Squad(private val units: List<Trooper>): Trooper {
             u.attackRebel(x, y)
         }
     }
+
+    operator fun iterator(): Iterator<Trooper> {
+        return TrooperIterator(units)
+    }
 }
 
 
