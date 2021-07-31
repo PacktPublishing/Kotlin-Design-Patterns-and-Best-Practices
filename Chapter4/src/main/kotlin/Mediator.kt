@@ -1,3 +1,25 @@
+interface ProductManager {
+    fun isAllGood(majorRelease: Boolean): Boolean
+}
+
+object Michael : Canary, ProductManager {
+    private val kenny = Kenny(this)
+    private val brad = Brad(this)
+
+    override fun isAllGood(majorRelease: Boolean): Boolean {
+        if (!kenny.isEating() && !kenny.isSleeping()) {
+            println(kenny.doesMyCodeWork())
+        } else if (!brad.isEating() && !brad.isSleeping()) {
+            println(brad.doesMyCodeWork())
+        }
+        return true
+    }
+}
+
+interface Canary {
+
+}
+
 interface QA {
     fun doesMyCodeWork(): Boolean
 }
@@ -7,66 +29,41 @@ interface Parrot {
     fun isSleeping(): Boolean
 }
 
-interface Owl {
-    fun isEating(): Boolean
-    fun isSleeping(): Boolean
-}
 
-object Kenny : QA, Parrot {
-    val developer = Me
-    // Implements interface methods based on parrot schedule
-    override fun doesMyCodeWork(): Boolean {
-        TODO("Not yet implemented")
+class Kenny(private val productManager: ProductManager) : QA, Parrot {
+
+    override fun isSleeping(): Boolean {
+        return false
     }
 
     override fun isEating(): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
-    override fun isSleeping(): Boolean {
-        TODO("Not yet implemented")
-    }
-}
-object Brad : QA, Parrot {
-    val senior = Kenny
-    val developer = Me
     override fun doesMyCodeWork(): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun isEating(): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun isSleeping(): Boolean {
-        TODO("Not yet implemented")
+        return true
     }
 }
 
-object George : QA, Owl {
-    val mate = Kenny
-    override fun doesMyCodeWork(): Boolean {
-        TODO("Not yet implemented")
+class Brad(private val productManager: ProductManager) : QA, Parrot {
+
+
+    override fun isSleeping(): Boolean {
+        return false
     }
 
     override fun isEating(): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
-    override fun isSleeping(): Boolean {
-        TODO("Not yet implemented")
+    override fun doesMyCodeWork(): Boolean {
+        return true
     }
 }
 
 object Me
-
-class MyCompany(private val manager: Manager) {
-    val cto = Me
-    val qa = Kenny
-
-    fun taskCompleted() {
-        if (!qa.isEating() && !qa.isSleeping()) {
-            println(qa.doesMyCodeWork())
-        }
+class MyCompany(private val productManager: ProductManager) {
+    fun taskCompleted(isMajorRelease: Boolean) {
+        println(productManager.isAllGood(isMajorRelease))
     }
 }
