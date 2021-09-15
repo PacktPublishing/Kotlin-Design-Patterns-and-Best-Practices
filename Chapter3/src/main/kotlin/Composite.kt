@@ -1,14 +1,22 @@
-class Squad(private val units: List<StormTrooper>) {
-    fun move(x: Long, y: Long) {
+
+class Squad(private val units: List<Trooper>): Trooper {
+
+    constructor(vararg units: Trooper): this(units.toList())
+
+    override fun move(x: Long, y: Long) {
         for (u in units) {
             u.move(x, y)
         }
     }
 
-    fun attack(x: Long, y: Long) {
+    override fun attackRebel(x: Long, y: Long) {
         for (u in units) {
             u.attackRebel(x, y)
         }
+    }
+
+    operator fun iterator(): Iterator<Trooper> {
+        return TrooperIterator(units)
     }
 }
 
