@@ -1,5 +1,4 @@
 fun main() {
-
     val platoon = Squad(
         Trooper(),
         Squad(
@@ -43,8 +42,7 @@ class TrooperIterator(private val units: List<Trooper>) : Iterator<Trooper> {
         if (iterator != this) {
             if (iterator.hasNext()) {
                 return iterator.next()
-            }
-            else {
+            } else {
                 i++
                 iterator = this
             }
@@ -63,9 +61,9 @@ class TrooperIterator(private val units: List<Trooper>) : Iterator<Trooper> {
     }
 }
 
-class Squad(private val units: List<Trooper>): Trooper() {
+class Squad(private val units: List<Trooper>) : Trooper() {
 
-    constructor(vararg units: Trooper): this(units.toList())
+    constructor(vararg units: Trooper) : this(units.toList())
 
     operator fun iterator(): Iterator<Trooper> {
         return TrooperIterator(units)
