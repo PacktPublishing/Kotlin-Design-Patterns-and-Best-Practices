@@ -2,8 +2,9 @@ import java.util.stream.Stream
 import kotlin.streams.toList
 
 fun main() {
-
-    /*cellPhone(
+    // This code won't work
+    /*
+    cellPhone(
         // Type mismatch: inferred type is UsbMini but UsbTypeC was expected
         charger(
             // Type mismatch: inferred type is USPlug but EUPlug was expected

@@ -1,5 +1,12 @@
 import java.io.File
 
+fun main() {
+    // Flyweight allows us to create much more objects that otherwise possible
+    val snails = List(10_000) {
+        TansanianSnail()
+    }
+}
+
 enum class Direction {
     LEFT,
     RIGHT
@@ -23,7 +30,6 @@ class TansanianSnail {
     // This may include its health, for example
 }
 object SnailSprites {
-
     val sprites = List(8) { i ->
         java.io.File(when (i) {
             0 -> "snail-left.jpg"
@@ -32,5 +38,4 @@ object SnailSprites {
             else -> "snail-move-right${(4-i)}.jpg"
         })
     }
-
 }
