@@ -21,6 +21,7 @@ data class StormTrooper(
     }
 
     override fun attackRebel(x: Long, y: Long) {
+        println("Attacking")
         weapon.attack(x, y)
     }
 }
