@@ -1,3 +1,19 @@
+fun main() {
+    val catTheConductor = Cat()
+
+    val bat = Bat()
+    val dog = Dog()
+    val turkey = Turkey()
+
+    catTheConductor.joinChoir(bat::screech)
+    catTheConductor.joinChoir(dog::howl)
+    catTheConductor.joinChoir(dog::bark)
+    catTheConductor.joinChoir(turkey::gobble)
+
+    catTheConductor.conduct()
+    catTheConductor.conduct()
+}
+
 class Bat {
     fun screech() {
         println("Eeeeeee")
@@ -31,7 +47,7 @@ class Cat {
         participants.remove(whatNotToCall)
     }
 
-    fun conduct(n: Int) {
+    fun conduct() {
         for (p in participants.values) {
             p()
         }
@@ -55,15 +71,3 @@ data class HighMessage(override val repeat: Times) : Message {
     override val pitch = SoundPitch.HIGH
 }
 
-fun main() {
-    val catTheConductor = Cat()
-
-    val bat = Bat()
-    val dog = Dog()
-    val turkey = Turkey()
-
-    catTheConductor.joinChoir(bat::screech)
-    catTheConductor.joinChoir(dog::howl)
-    catTheConductor.joinChoir(dog::bark)
-    catTheConductor.joinChoir(turkey::gobble)
-}

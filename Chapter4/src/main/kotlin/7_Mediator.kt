@@ -1,3 +1,9 @@
+fun main() {
+    val productManager = Michael
+    val company = MyCompany(productManager)
+    company.taskCompleted(true)
+}
+
 interface ProductManager {
     fun isAllGood(majorRelease: Boolean): Boolean
 }
@@ -31,7 +37,6 @@ interface Parrot {
 
 
 class Kenny(private val productManager: ProductManager) : QA, Parrot {
-
     override fun isSleeping(): Boolean {
         return false
     }
@@ -46,8 +51,6 @@ class Kenny(private val productManager: ProductManager) : QA, Parrot {
 }
 
 class Brad(private val productManager: ProductManager) : QA, Parrot {
-
-
     override fun isSleeping(): Boolean {
         return false
     }
