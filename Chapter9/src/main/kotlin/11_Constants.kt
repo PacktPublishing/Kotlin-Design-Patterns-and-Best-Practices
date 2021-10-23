@@ -1,5 +1,3 @@
-
-
 fun main() {
     println(Spock.SENSE_OF_HUMOR)
 }
