@@ -1,6 +1,6 @@
-/*fun printNameLength(p: Profile) {
-    require(p.firstName != null)
-}*/
+fun main() {
+    printNameLength(Profile(null))
+}
 
 fun printNameLength(p: Profile) {
     requireNotNull(p.firstName)
