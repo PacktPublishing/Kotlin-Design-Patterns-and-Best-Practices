@@ -22,8 +22,8 @@ fun CoroutineScope.producePages() = produce {
     // This should actually fetch something from the Internet
     fun getPages(): List<String> {
         return listOf(
-            "<html><body><H1>Cool stuff</H1></body></html>",
-            "<html><body><H1>Event more stuff</H1></body></html>"
+            "<html><body><h1>Cool stuff</h1></body></html>",
+            "<html><body><h1>Even more stuff</h1></body></html>"
         )
     }
 
@@ -50,7 +50,7 @@ fun CoroutineScope.produceDom(pages: ReceiveChannel<String>) = produce {
 
 fun CoroutineScope.produceTitles(parsedPages: ReceiveChannel<Document>) = produce {
     fun getTitles(dom: Document): List<String> {
-        return dom.getElementsByTagName("H1").map {
+        return dom.getElementsByTagName("h1").map {
             it.toString()
         }
     }

@@ -6,7 +6,7 @@ import kotlinx.coroutines.channels.consumeEach
 fun main() {
     runBlocking {
         val workChannel = generateWork()
-        val resultChannel = Channel<Int>()
+        val resultChannel = Channel<String>()
         val workers = List(10) {
             doWorkAsync(workChannel, resultChannel)
         }
@@ -20,9 +20,9 @@ fun main() {
 
 private fun CoroutineScope.doWorkAsync(
     channel: ReceiveChannel<String>,
-    resultChannel: Channel<Int>
+    resultChannel: Channel<String>
 ) = async(Dispatchers.Default) {
     for (p in channel) {
-        resultChannel.send(p.length)
+        resultChannel.send(p.repeat(2))
     }
 }

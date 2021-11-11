@@ -1,4 +1,5 @@
 import kotlinx.coroutines.*
+import kotlin.random.Random
 import kotlin.system.measureTimeMillis
 
 fun main() {
@@ -10,7 +11,7 @@ fun main() {
             fetchFavoriteCharacterCorrect("Inigo Montoya")
         })
         val (name, catchphrase, _) = fetchFavoriteCharacterCorrect("Inigo Montoya")
-
+        println("$name says: $catchphrase")
         val characters: List<Deferred<FavoriteCharacter>> =
             listOf(
                 Me.getFavoriteCharacter(),
@@ -39,7 +40,7 @@ suspend fun fetchFavoriteCharacterCorrect(name: String) = coroutineScope {
 data class FavoriteCharacter(
     val name: String,
     val catchphrase: String,
-    val picture: ByteArray? = null
+    val picture: ByteArray = Random.nextBytes(42)
 )
 
 fun CoroutineScope.getCatchphraseAsync(characterName: String) = async {
@@ -55,7 +56,7 @@ fun CoroutineScope.getPicture(characterName: String) = async {
     // Simulate network call
     delay(500)
     when (characterName) {
-        else -> null
+        else -> Random.nextBytes(42)
     }
 }
 

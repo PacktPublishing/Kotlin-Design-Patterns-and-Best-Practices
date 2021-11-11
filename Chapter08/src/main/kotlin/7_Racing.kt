@@ -7,13 +7,13 @@ import kotlin.random.Random
 
 fun main() {
     runBlocking {
-        while(true) {
+        while (true) {
             val winner = select<Pair<String, String>> {
-                preciseWeather().onReceive {
-                    it
+                preciseWeather().onReceive { preciseWeatherResult ->
+                    preciseWeatherResult
                 }
-                weatherToday().onReceive {
-                    it
+                weatherToday().onReceive { weatherTodayResult ->
+                    weatherTodayResult
                 }
             }
             println(winner)
