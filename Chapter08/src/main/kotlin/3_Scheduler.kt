@@ -5,22 +5,22 @@ import java.util.concurrent.ForkJoinPool
 fun main() {
     runBlocking {
 
-        /*    // This will use the Dispatcher from the parent coroutine
-            launch {
-                // Prints: main
-                println(Thread.currentThread().name)
-            }
-            launch(Dispatchers.Default) {
-                // Prints DefaultDispatcher-worker-1
-                println(Thread.currentThread().name)
-            }*/
+        // This will use the Dispatcher from the parent coroutine
+        launch {
+            // Prints: main
+            println(Thread.currentThread().name)
+        }
+        launch(Dispatchers.Default) {
+            // Prints DefaultDispatcher-worker-1
+            println(Thread.currentThread().name)
+        }
 
-/*        async(Dispatchers.IO) {
+        async(Dispatchers.IO) {
             for (i in 1..1000) {
                 println(Thread.currentThread().name)
                 yield()
             }
-        }*/
+        }
 
         val myDispatcher = Executors
             .newFixedThreadPool(4)

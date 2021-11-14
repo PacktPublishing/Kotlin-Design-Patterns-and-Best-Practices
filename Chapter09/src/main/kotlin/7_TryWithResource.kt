@@ -2,9 +2,9 @@ import java.io.BufferedReader
 import java.io.FileReader
 
 fun main() {
-    val br = BufferedReader(FileReader("/some/path"))
+    val br = BufferedReader(FileReader("./src/main/kotlin/7_TryWithResource.kt"))
 
     br.use {
-        println(it.readLine())
+        println(it.readLines())
     }
 }
