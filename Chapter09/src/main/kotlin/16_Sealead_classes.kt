@@ -1,3 +1,17 @@
+import kotlin.random.Random
+
+fun main() {
+    var order: PizzaOrderStatus = OrderReceived(Random.nextInt())
+    println(order)
+    order = order.nextStatus()
+    println(order)
+    order = order.nextStatus()
+    println(order)
+    order = order.nextStatus()
+    println(order)
+}
+
+
 // Java-like code that uses enum to represent State
 /*enum class PizzaOrderStatus {
     ORDER_RECEIVED, PIZZA_BEING_MADE, OUT_FOR_DELIVERY, COMPLETED;
