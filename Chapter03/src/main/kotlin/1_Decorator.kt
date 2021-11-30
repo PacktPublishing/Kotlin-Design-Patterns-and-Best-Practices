@@ -10,11 +10,9 @@ fun main() {
     try {
         // Throws an exception: Kathryn Janeway name is longer than 15 characters!
         withLoggingAndValidating["USS Voyager"] = "Kathryn Janeway"
-    }
-    catch (e: IllegalStateException) {
+    } catch (e: IllegalStateException) {
         println(e)
     }
-
 
     println(withLoggingAndValidating is LoggingGetCaptain) // This is our top level decorator, no problem here
     println(withLoggingAndValidating is StarTrekRepository) // This is the interface we implement, still no problem
@@ -39,17 +37,17 @@ class DefaultStarTrekRepository : StarTrekRepository {
     }
 }
 
-class LoggingGetCaptain(private val repository: StarTrekRepository): StarTrekRepository by repository {
+class LoggingGetCaptain(private val repository: StarTrekRepository) : StarTrekRepository by repository {
     override fun get(starshipName: String): String {
         println("Getting captain for $starshipName")
         return repository[starshipName]
     }
 }
 
-class ValidatingAdd(private val repository: StarTrekRepository): StarTrekRepository by repository {
+class ValidatingAdd(private val repository: StarTrekRepository) : StarTrekRepository by repository {
     private val maxNameLength = 15
     override fun set(starshipName: String, captainName: String) {
-        require (captainName.length < maxNameLength) {
+        require(captainName.length < maxNameLength) {
             "$captainName name is longer than $maxNameLength characters!"
         }
 
