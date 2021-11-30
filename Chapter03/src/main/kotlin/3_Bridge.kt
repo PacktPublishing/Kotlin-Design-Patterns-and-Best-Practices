@@ -38,13 +38,13 @@ interface Legs {
 }
 
 const val RIFLE_DAMAGE = 3L
-const val REGULAR_SPEED : Meters = 1
+const val REGULAR_SPEED: Meters = 1
 
 class Rifle : Weapon {
     override fun attack(x: Long, y: Long) = RIFLE_DAMAGE
 }
 
-class Flamethrower: Weapon {
+class Flamethrower : Weapon {
     override fun attack(x: Long, y: Long) = RIFLE_DAMAGE * 2
 }
 

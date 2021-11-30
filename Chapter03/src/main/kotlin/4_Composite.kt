@@ -4,6 +4,12 @@ fun main() {
     val squad = Squad(listOf(bobaFett.copy(), bobaFett.copy(), bobaFett.copy()))
 
     squad.attackRebel(1, 2)
+
+    val secondSquad = Squad(
+        bobaFett.copy(),
+        bobaFett.copy(),
+        bobaFett.copy()
+    )
 }
 
 class Squad(private val units: List<Trooper>) : Trooper {
