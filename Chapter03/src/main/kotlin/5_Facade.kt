@@ -6,8 +6,7 @@ import kotlin.io.path.Path
 fun main() {
     try {
         val server = Server.withPort(0).startFromConfiguration("/path/to/config")
-    }
-    catch (e: FileNotFoundException) {
+    } catch (e: FileNotFoundException) {
         println("If there was a file and a parser, it would have worked")
     }
 }
