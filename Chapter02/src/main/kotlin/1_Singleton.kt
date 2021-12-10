@@ -1,4 +1,3 @@
-
 fun main() {
     Logger.log("Hello World")
 }

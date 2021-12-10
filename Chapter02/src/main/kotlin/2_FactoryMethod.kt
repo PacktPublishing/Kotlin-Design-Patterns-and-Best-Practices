@@ -1,3 +1,8 @@
+fun main() {
+    val queen = createPiece("qa5")
+    println(queen)
+}
+
 interface ChessPiece {
     val file: Char
     val rank: Char
@@ -24,7 +29,3 @@ fun createPiece(notation: String): ChessPiece {
     }
 }
 
-fun main() {
-    val queen = createPiece("qa5")
-    println(queen)
-}

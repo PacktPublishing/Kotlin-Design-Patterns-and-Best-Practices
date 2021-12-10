@@ -1,3 +1,7 @@
+fun main() {
+    Server.withPort(8080)
+}
+
 class Server private constructor(port: Long) {
 
     init {
@@ -6,11 +10,8 @@ class Server private constructor(port: Long) {
 
     companion object {
         fun withPort(port: Long): Server {
-            return Server(port);
+            return Server(port)
         }
     }
 }
 
-fun main() {
-    Server.withPort(8080)
-}

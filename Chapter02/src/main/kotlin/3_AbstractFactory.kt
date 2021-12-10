@@ -1,5 +1,3 @@
-
-
 fun main() {
     val environment = Parser.server(listOf("port: 8080", "environment: production"))
     println(environment)
@@ -31,8 +29,6 @@ class Parser {
 }
 
 
-
-
 interface Property {
 
     val name: String
@@ -40,7 +36,6 @@ interface Property {
     val value: Any
 
 }
-
 
 
 interface ServerConfiguration {
