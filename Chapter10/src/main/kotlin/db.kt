@@ -9,8 +9,10 @@ object DB {
     private val dbUser = System.getenv("DB_USER") ?: "cats_admin"
     private val dbPassword = System.getenv("DB_PASSWORD") ?: "abcd1234"
     fun connect() = Database.connect(
-        "jdbc:postgresql://$host:$port/$dbName", driver = "org.postgresql.Driver",
-        user = dbUser, password = dbPassword
+        "jdbc:postgresql://$host:$port/$dbName",
+        driver = "org.postgresql.Driver",
+        user = dbUser,
+        password = dbPassword
     )
 }
 
