@@ -20,7 +20,7 @@ class ServerVerticle : CoroutineVerticle() {
         vertx.createHttpServer()
             .requestHandler(router)
             .listen(8081)
-        println("open http://localhost:8081")
+        println("open http://localhost:8081/status")
     }
 
     private fun router(): Router {
