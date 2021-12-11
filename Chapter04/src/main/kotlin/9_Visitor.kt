@@ -1,10 +1,11 @@
 fun main() {
 
-    val page = Page(Container(
-        Image,
-        Link,
-        Image
-    ),
+    val page = Page(
+        Container(
+            Image,
+            Link,
+            Image
+        ),
         Table,
         Link,
         Container(
@@ -16,7 +17,9 @@ fun main() {
             Container(
                 Image,
                 Link
-            )))
+            )
+        )
+    )
 
     println(collectLinks(page))
 }
