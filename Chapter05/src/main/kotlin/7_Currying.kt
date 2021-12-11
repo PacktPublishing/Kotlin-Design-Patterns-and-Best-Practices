@@ -29,6 +29,7 @@ fun subtract(x: Int) = { y: Int -> x - y }
 enum class LogLevel {
     ERROR, WARNING, INFO
 }
+
 fun log(level: LogLevel, message: String) =
     println("$level: $message")
 
