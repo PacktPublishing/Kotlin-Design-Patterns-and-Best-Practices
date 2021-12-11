@@ -1,5 +1,5 @@
 fun main() {
-    val listOfLists = listOf(listOf(1, 2), listOf(3, 4, 5), listOf(6, 7, 8))
+    val listOfLists: List<List<Int>> = listOf(listOf(1, 2), listOf(3, 4, 5), listOf(6, 7, 8))
 
     val flattened = mutableListOf<Int>()
 
@@ -8,5 +8,8 @@ fun main() {
     }
 
     println(flattened)
+
+    val flat: List<Int> = listOfLists.flatten()
+    println(flat)
     println(listOfLists.flatMap { it })
 }

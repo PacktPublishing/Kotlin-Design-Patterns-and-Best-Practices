@@ -7,5 +7,6 @@ fun main() {
     }
     println(sum)
 
-    println((1..100).reduce { sum, n -> sum + n })
+    val reduced: Int = (1..100).reduce { sum, n -> sum + n }
+    println(reduced)
 }
