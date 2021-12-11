@@ -3,7 +3,8 @@ fun main() {
     val numbers = (1..100).reversed()
 
     println(findFizzbuzz(numbers.toList()))
-    println((1..100).find { it % 3 == 0 && it % 5 == 0 })
+    val found: Int? = (1..100).find { it % 3 == 0 && it % 5 == 0 }
+    println(found)
 }
 
 fun findFizzbuzz(numbers: List<Int>): Int? {
