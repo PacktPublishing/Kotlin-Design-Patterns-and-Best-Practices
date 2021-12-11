@@ -10,8 +10,7 @@ fun main() = runBlocking {
                 delay(time)
                 println("Returning profile")
                 "Profile"
-            }
-            catch (e: TimeoutCancellationException) {
+            } catch (e: TimeoutCancellationException) {
                 e.printStackTrace()
             }
         }
