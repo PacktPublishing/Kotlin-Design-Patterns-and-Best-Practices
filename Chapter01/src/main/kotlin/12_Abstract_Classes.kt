@@ -12,9 +12,9 @@ abstract class Moveable() {
     fun position() = "$x $y"
 }
 
-open class ActivePlayer(val name: String): Moveable(), DiceRoller
+open class ActivePlayer(val name: String) : Moveable(), DiceRoller
 
-class ConfusedPlayer(name: String): ActivePlayer(name) {
+class ConfusedPlayer(name: String) : ActivePlayer(name) {
 
     // move() must be declared open
     override fun move(x: Int, y: Int) {
