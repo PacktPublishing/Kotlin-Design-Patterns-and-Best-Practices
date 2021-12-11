@@ -37,13 +37,13 @@ class Dog {
 }
 
 class Cat {
-    private val participants = mutableMapOf<()->Unit, ()->Unit>()
+    private val participants = mutableMapOf<() -> Unit, () -> Unit>()
 
-    fun joinChoir(whatToCall: ()->Unit) {
+    fun joinChoir(whatToCall: () -> Unit) {
         participants[whatToCall] = whatToCall
     }
 
-    fun leaveChoir(whatNotToCall: ()->Unit) {
+    fun leaveChoir(whatNotToCall: () -> Unit) {
         participants.remove(whatNotToCall)
     }
 
@@ -56,7 +56,7 @@ class Cat {
 
 typealias Times = Int
 
-enum class SoundPitch {HIGH, LOW}
+enum class SoundPitch { HIGH, LOW }
 interface Message {
     val repeat: Times
     val pitch: SoundPitch
