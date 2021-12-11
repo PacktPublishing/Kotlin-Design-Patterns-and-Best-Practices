@@ -14,9 +14,10 @@ suspend fun valueAsync(): Deferred<String> = coroutineScope {
         delay(100)
         if (Random.nextBoolean()) {
             deferred.complete("OK")
-        }
-        else {
-            deferred.completeExceptionally(RuntimeException())
+        } else {
+            deferred.completeExceptionally(
+                RuntimeException()
+            )
         }
     }
     deferred
