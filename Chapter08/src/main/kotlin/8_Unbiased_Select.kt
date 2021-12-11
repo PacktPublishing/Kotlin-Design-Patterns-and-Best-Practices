@@ -2,7 +2,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.produce
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.selects.select
 import kotlinx.coroutines.selects.selectUnbiased
 
 fun main() {
@@ -19,6 +18,8 @@ fun main() {
     }
 }
 
-fun CoroutineScope.fastProducer(movieName: String) = produce(capacity = 1) {
+fun CoroutineScope.fastProducer(
+    movieName: String
+) = produce(capacity = 1) {
     send(movieName)
 }

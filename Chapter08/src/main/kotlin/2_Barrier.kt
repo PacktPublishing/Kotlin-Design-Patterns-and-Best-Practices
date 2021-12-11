@@ -30,7 +30,9 @@ suspend fun fetchFavoriteCharacterWrong(name: String) = coroutineScope {
     FavoriteCharacter(name, catchphrase, picture)
 }
 
-suspend fun fetchFavoriteCharacterCorrect(name: String) = coroutineScope {
+suspend fun fetchFavoriteCharacterCorrect(
+    name: String
+) = coroutineScope {
     val catchphrase = getCatchphraseAsync(name)
     val picture = getPicture(name)
 
@@ -43,7 +45,9 @@ data class FavoriteCharacter(
     val picture: ByteArray = Random.nextBytes(42)
 )
 
-fun CoroutineScope.getCatchphraseAsync(characterName: String) = async {
+fun CoroutineScope.getCatchphraseAsync(
+    characterName: String
+) = async {
     // Simulate network call
     delay(100)
     when (characterName) {
@@ -52,7 +56,9 @@ fun CoroutineScope.getCatchphraseAsync(characterName: String) = async {
     }
 }
 
-fun CoroutineScope.getPicture(characterName: String) = async {
+fun CoroutineScope.getPicture(
+    characterName: String
+) = async {
     // Simulate network call
     delay(500)
     when (characterName) {
