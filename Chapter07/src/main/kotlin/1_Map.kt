@@ -1,4 +1,3 @@
-
 fun main() {
 
     val letters = 'a'..'z'
@@ -9,5 +8,6 @@ fun main() {
     }
 
     println(ascii)
-    println(('a'..'z').map { it.toInt() })
+    val result: List<Int> = ('a'..'z').map { it.toInt() }
+    println(result)
 }

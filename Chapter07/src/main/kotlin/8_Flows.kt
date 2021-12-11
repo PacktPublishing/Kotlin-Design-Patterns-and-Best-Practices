@@ -29,13 +29,10 @@ fun main() {
                         delay(1000)
                         println("Coroutine $coroutineId received $number")
                     }
-                }
-                catch (e: Exception) {
+                } catch (e: Exception) {
                     println("Coroutine $coroutineId got an error")
                 }
             }
         }
     }
-
-
 }

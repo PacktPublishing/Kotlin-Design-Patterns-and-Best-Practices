@@ -11,5 +11,6 @@ fun main() {
     }
 
     println(notFizzbuzz)
-    println((1..100).filter { it % 3 == 0 || it % 5 == 0 })
+    val filtered: List<Int> = (1..100).filter { it % 3 == 0 || it % 5 == 0 }
+    println(filtered)
 }

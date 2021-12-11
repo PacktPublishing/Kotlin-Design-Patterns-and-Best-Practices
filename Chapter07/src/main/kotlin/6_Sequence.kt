@@ -1,5 +1,5 @@
 fun main() {
-    val seq = generateSequence(1L) { it + 1 }
+    val seq: Sequence<Long> = generateSequence(1L) { it + 1 }
 
     //seq.forEach { println(it) }
 
