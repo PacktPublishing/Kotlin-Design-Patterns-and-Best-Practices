@@ -1,6 +1,20 @@
 fun main() {
 
-    val dwarfs = listOf("Dwalin", "Balin", "Kili", "Fili", "Dori", "Nori", "Ori", "Oin", "Gloin", "Bifur", "Bofur", "Bombur", "Thorin")
+    val dwarfs = listOf(
+        "Dwalin",
+        "Balin",
+        "Kili",
+        "Fili",
+        "Dori",
+        "Nori",
+        "Ori",
+        "Oin",
+        "Gloin",
+        "Bifur",
+        "Bofur",
+        "Bombur",
+        "Thorin"
+    )
     for (d in dwarfs) {
         println(d)
     }
@@ -13,5 +27,5 @@ fun main() {
         println(it)
     }
 
-dwarfs.forEach(::println)
+    dwarfs.forEach(::println)
 }
