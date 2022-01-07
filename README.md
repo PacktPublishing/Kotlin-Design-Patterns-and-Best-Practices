@@ -1,8 +1,8 @@
-# Kotlin Design Patterns and Best Practices
+# Kotlin Design Patterns and Best Practices - Second Edition
 
 <a href="https://www.packtpub.com/product/kotlin-design-patterns-and-best-practices-second-edition/9781801815727?utm_source=github&utm_medium=repository&utm_campaign=9781801815727"><img src="https://static.packt-cdn.com/products/9781801815727/cover/smaller" alt="About the Author" height="256px" align="right"></a>
 
-This is the code repository for [Kotlin Design Patterns and Best Practices](https://www.packtpub.com/product/kotlin-design-patterns-and-best-practices-second-edition/9781801815727?utm_source=github&utm_medium=repository&utm_campaign=9781801815727), published by Packt.
+This is the code repository for [Kotlin Design Patterns and Best Practices - Second Edition](https://www.packtpub.com/product/kotlin-design-patterns-and-best-practices-second-edition/9781801815727?utm_source=github&utm_medium=repository&utm_campaign=9781801815727), published by Packt.
 
 **Build scalable applications using traditional, reactive, and concurrent design patterns in Kotlin**
 
