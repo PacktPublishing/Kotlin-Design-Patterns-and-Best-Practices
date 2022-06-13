@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B17816?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Kotlin Design Patterns and Best Practices - Second Edition
 
 <a href="https://www.packtpub.com/product/kotlin-design-patterns-and-best-practices-second-edition/9781801815727?utm_source=github&utm_medium=repository&utm_campaign=9781801815727"><img src="https://static.packt-cdn.com/products/9781801815727/cover/smaller" alt="About the Author" height="256px" align="right"></a>
