@@ -56,3 +56,7 @@ is a software architect with 15 years of experience in the industry. He started 
 
 ## Other books by the authors
 * [Hands-on Design Patterns with Kotlin](https://www.packtpub.com/product/hands-on-design-patterns-with-kotlin/9781788998017?utm_source=github&utm_medium=repository&utm_campaign=9781788998017)
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801815727">https://packt.link/free-ebook/9781801815727 </a> </p>
